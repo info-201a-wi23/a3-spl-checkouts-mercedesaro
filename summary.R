@@ -4,7 +4,7 @@ library("scales")
 library("ggplot2")
 library("tidyverse")
 
-SPL_df <- read.csv("~/Desktop/info201/a3-spl-checkouts-mercedesaro/2017-2023-10-Checkouts-SPL-Data.csv", stringsAsFactors = FALSE)
+SPL_df <- read.csv("~/Desktop/2017-2023-10-Checkouts-SPL-Data.csv", stringsAsFactors = FALSE)
 
 SPL_df <- SPL_df %>% mutate(date = as.Date(paste0(CheckoutYear, '-', CheckoutMonth,'-01'),'%Y-%m-%d'))
 

@@ -23,6 +23,12 @@ The data we have is from the Seattle Public Library and they are the ones who ha
 
 In the first chart I wanted to see the average amount of checkouts of non-fiction books. I was curious to see if there would be an incline of non-fiction books checked out during the BLM and covid times. The trend that occurred within the data was that the highest year that non-fiction books were checked out was the year 2020.
 
+```{r, echo = FALSE, warning = FALSE, message = FALSE}
+source("chart1_example.R")
+average
+```
+
+
 
 ### Second Trends Over Time Chart
 
