@@ -1,86 +1,44 @@
 ---
-title: "A3: SPL Library Checkouts"
+title: "A3: SPL Library Checkouts by Mercedes Ro"
 output: html_document
 ---
 
 ### Introduction
 
-An introduction of the data and a description of the trends/books/items you are choosing to analyze (and why!)
+The data shows all the books that have been checked out from 2017-2023 from the Seattle Public Library. I have decided to focus on the total number of checkouts and the most/least checked out books. I wanted to see the popularity of books as we develop year by year, and which month had the most checkouts. I notice that when the year starts books are more popular.
 
 ### Summary Information
 
-Write a summary paragraph of findings that includes the 5 values calculated from your summary information R script
+```{r include=FALSE, paged.print=TRUE}
+source("summary.R")
+```
 
-These will likely be calculated using your DPLYR skills, answering questions such as:
-
-- What is the average number of checkouts for each item?
-- What is the month or year with the most/least checkouts for a book that you're interested in?
-- What is the month or year with the most/least checkouts for ebooks?
-- How has the number of print book checkouts changed over time?
-
-Feel free to calculate and report values that you find relevant.
+With the data I wanted to see how many books were checked out from 2017 to 2023. First I checked how many books were checked out there were `r data_description$books_checked_out_2017` books checked out in 2017, and `r data_description$books_checked_out_2023` books checked out in 2023. I wanted to see how many books were checked out per month but more specifically which month had the highest check outs and it was `r MostMonthCheckouts`. This was not surprising to me because usually everyone has the New Year resolution is read more and get off of technology. I then was curious to see which book is the most popular `r most_checked_out_book` and what was the least popular at the Seattle Public Library and there were quite a few `r data_description$least_checked_out_book`. I was surprised by the results and never realized how many books are not checked out.
 
 ### The Dataset
 
-- Who collected/published the data?  
-- What are the parameters of the data (dates, number of checkouts, kinds of books, etc.)?
-- How was the data collected or generated?  
-- Why was the data collected?  
-- What, if any, ethical questions do you need to consider when working with this data?  
-- What are possible limitations or problems with this data?   (at least 200 words)
-
+The data we have is from the Seattle Public Library and they are the ones who have collected and published this data for us to access. In the data we are provided with the month, material type, year, titles, authors, subject, publisher, and etc. The data was collected to keep track of the trends and books that are constantly checked out, they keep track month to month. The data was collected by seeing the trends of people who have accounts and checkout books. An ethical question would be if any of the people who are checking out these books have their privacy violated because the Seattle Public Library has their record of books they have checked out, this takes away their privacy to check out books of their interest whether it be explicit or common. I think some limitations with this data is the people who are in the library enjoying the contents but are not checking the book out, the data is not entirely accurate. I decided to choose the more recent dataset because we have now become so technical. I wondered if people still used the public libraries frequently, and how often books were checked out each month. I also narrowed it down to non-fiction books because those have been more popular throughout social media as time has gone by.
 
 ### First Trends Over Time Chart
 
-Include a chart. Make sure to describe why you included the chart, and what patterns emerged
+In the first chart I wanted to see the average amount of checkouts of non-fiction books. I was curious to see if there would be an incline of non-fiction books checked out during the BLM and covid times. The trend that occurred within the data was that the highest year that non-fiction books were checked out was the year 2020.
 
-The first chart that you will create and include will show the trend over time of your variable/topic/interest. Think carefully about what you want to communicate to your user (you may have to find relevant trends in the dataset first!). Here are some requirements to help guide your design:
-
-- Show more than one, but fewer than ~10 trends
-  - For example, two books, or 5 different mediums
-- You must have clear x and y axis labels
-- The chart needs a clear title 
-- You need a legend for your different line colors and a clear - legend title
-In your .Rmd file, make sure to describe why you included the chart, and what patterns emerged
-
-When we say "clear" or "human readable" titles and labels, that means that you should not just display the variable name.
-
-Here's an example of how to run an R script inside an RMarkdown file:
-
-``````{r, echo = FALSE, warning = FALSE, code = readLines("chart1_example.R")}
+```{r, echo = FALSE, warning = FALSE, code = readLines("chart1_example.R")}
+source("chart1_example.R")
 ```
 
 ### Second Trends Over Time Chart
 
-Include a chart. Make sure to describe why you included the chart, and what patterns emerged
+In the second chart I wanted to see the difference in checkouts of physical and digital books. Since everything is online now I was curious to see if people would start to check out digital books more than physical books. The trend I saw within the chart was digital books were checked out far more than physical books. Physical book checkout seems to have declined quite as the year has gone on.
 
-The second chart that you will create and include will show another trend over time of your variable/topic/interest. Think carefully about what you want to communicate to your user (you may have to find relevant trends in the dataset first!). Here are some requirements to help guide your design:
-
-- Show more than one, but fewer than ~10 trends
-  - For example, two books, or 5 different mediums
-- You must have clear x and y axis labels
-- The chart needs a clear title 
-- You need a legend for your different line colors and a clear - legend title
-In your .Rmd file, make sure to describe why you included the chart, and what patterns emerged
-
-When we say "clear" or "human readable" titles and labels, that means that you should not just display the variable name.
-
-Here's an example of how to run an R script inside an RMarkdown file:
-
-``````{r, echo = FALSE, code = readLines("chart2_example.R")}
+```{r, echo = FALSE, code = readLines("chart2_example.R")}
+source("chart2_example.R")
 ```
 
 ### Your Choice
 
-The last chart is up to you. It could be a line plot, scatter plot, histogram, bar plot, stacked bar plot, and more. Here are some requirements to help guide your design:
+In my last chart I decided to do a pie chart to show the total checkouts by material type, and my intentions were to see what was the most popular type of book to be checked out from Seattle Public Library. In the chart we see that Ebooks, audio books, and books are all pretty equally checked out. I was surprised to see that sound disc was not checked out as much but also it does make sense since we have access to it through our devices.
 
-- You must have clear x and y axis labels
-- The chart needs a clear title 
-- You need a legend for your different line colors and a clear legend title
-
-Here's an example of how to run an R script inside an RMarkdown file:
-
-``````{r, echo = FALSE, code = readLines("chart2_example.R")}
+```{r, echo = FALSE, code = readLines("chart3.R")}
+source("chart3.R")
 ```
-
-
